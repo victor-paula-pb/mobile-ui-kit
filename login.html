@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile UI Kit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+
+    <script>
+        const login = () => {
+            let nome = document.querySelector("#name").value
+            if (nome) localStorage.setItem(`name`, nome)
+            else document.querySelector("#name").classList.add('input-error')
+            window.location.replace(`/home.html`)
+        }
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="content__header images">
+            <img src="assets/img/fruit-drops2-removebg-preview 1.png" alt="" class="images__smallFruit">
+            <img src="assets/img/kisspng-fruit-basket-clip-art-5aed5301d44408 1.png" alt="" class="images__fruitBasket">
+            <img src="assets/img/Vector.png" alt="" srcset="" class="images__basketShadow">
+        </div>
+        <div class="content__body body">
+            <div class="content__title">
+                <h1>What is your first name?</h1>
+            </div>
+            <div class="content__description">
+
+                <input type="text" name="name_1" required id="name" placeholder="Kante" class="content__textbox" />
+            </div>
+            <div class="content__button">
+                <button href="#" onclick="login()">Start Ordering</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
