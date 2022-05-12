@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<script>
+    window.addEventListener(`load`, () => {
+        let elements = [...document.querySelectorAll("span")]
+        console.log(elements)
+        elements.map((e) => e.innerText = localStorage.getItem(`name`))
+    })
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile UI Kit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+
+    <script>
+        const login = () => {
+            let nome = document.querySelector("#name").value
+            if (nome) localStorage.setItem(`name`, nome)
+            else document.querySelector("#name").classList.add('input-error')
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__burger">
+            <img src="assets/img/Burger.png" alt="">
+        </div>
+        <img src="assets/img/fa_shopping-basket.png" alt="" class="header_burger">
+    </header>
+    <main class="main">
+        <h1 class="main__title">
+            Hello <span class=`username`>$</span>, <strong>What fruit salad combo do you want today?</strong>
+        </h1>
+        <div class="main__search search">
+            <div class="search__container">
+                <img src="assets/img/search.png" alt="" srcset="" class="search__icon">
+                <input type="text" name="" id="" class="search__input" placeholder="Search for fruit salad combos">
+                <img src="assets/img/filter.png" alt="" class="search__filter">
+            </div>
+        </div>
+        <div class="recommended"></div>
+    </main>
+</body>
+
+</html>
