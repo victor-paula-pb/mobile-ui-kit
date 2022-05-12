@@ -1,0 +1,81 @@
+$primary:#FFA451;
+@mixin flex($property, $parameter) {
+    display: flex;
+    #{$property}: $parameter;
+}
+
+@font-face {
+    font-family: 'BrandonGrotesqueRegular';
+    src: url('../assets/fonts/BrandonGrotesque/Brandon_reg.otf');
+}
+
+@font-face {
+    font-family: 'BrandonGrotesqueLight';
+    src: url('../assets/fonts/BrandonGrotesque/Brandon_light.otf');
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.content {
+    font-family: '';
+    width: 100%;
+    height: 100%;
+    @include flex(flex-direction,
+    column);
+    &__header {
+        @include flex(justify-content,
+        space-around);
+        flex-direction: column;
+        background-color: $primary;
+        padding: 5rem 0 2rem;
+        .images {
+            &__smallFruit {
+                align-self: flex-end;
+                margin-right: 3rem;
+                transform: translateY(1rem);
+            }
+            &__fruitBasket {
+                padding: 0 3.5rem;
+            }
+            &__basketShadow {
+                margin-top: 1rem;
+                padding: 0 3.5rem;
+            }
+        }
+    }
+    &__body {
+        @include flex(justify-content,
+        space-around);
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+        font-family: 'BrandonGrotesqueRegular';
+    }
+    &__title {
+        font-weight: bold;
+        padding-top: 2rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    &__description {
+        font-family: 'BrandonGrotesqueLight';
+        padding: 2rem 0 3rem;
+    }
+    &__button {
+        text-align: center;
+        @include flex(flex-direction,
+        column);
+        align-self: center;
+        width: 100%;
+        a {
+            padding: 1rem;
+            text-decoration: none;
+            background-color: $primary;
+            border-radius: 0.5rem;
+            color: aliceblue;
+        }
+    }
+}
