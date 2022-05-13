@@ -1,5 +1,13 @@
+///Main website colors
 $primary:#FFA451;
+$primary-light: #FFF2E7;
 $secondary: #F3F1F1ff;
+///Trending cards color
+$light-red: #FEF0F0;
+$light-purple: #F1EFF6;
+$light-yellow: #FFFAEB; ///font colors
+$font-color: #27214D;
+$font-color-light: #938DB5;
 @mixin flex($property, $parameter) {
     display: flex;
     #{$property}: $parameter;
@@ -15,7 +23,13 @@ $secondary: #F3F1F1ff;
     src: url('../assets/fonts/BrandonGrotesque/Brandon_light.otf');
 }
 
+@font-face {
+    font-family: 'BrandonGrotesqueBold';
+    src: url('../assets/fonts/BrandonGrotesque/Brandon_bld.otf');
+}
+
 body {
+    color: $font-color;
     width: 100vw;
     height: 100vh;
 }
@@ -102,13 +116,24 @@ body {
         @include flex(align-items,
         center);
     }
+    &__basket {
+        @include flex(flex-direction,
+        column);
+        align-items: center;
+        justify-content: center;
+    }
+    &__basketText {
+        margin-top: 3px;
+        font-family: 'BrandonGrotesqueRegular';
+        font-size: 0.8rem;
+    }
 }
 
 .main {
     padding: 1rem 2rem;
     &__title {
         font-family: 'BrandonGrotesqueLight';
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         width: 80%;
         strong {
             font-family: 'BrandonGrotesqueRegular';
@@ -138,5 +163,155 @@ body {
             width: 1.75rem;
             margin-left: 0.5rem;
         }
+    }
+}
+
+.recommended {
+    &__title {
+        font-family: 'BrandonGrotesqueBold';
+        font-size: 1.6rem;
+    }
+    &__combos {
+        margin-top: 2rem;
+        @include flex(justify-content,
+        space-between);
+    }
+    &__item {
+        position: relative;
+        width: 48%;
+        @include flex(justify-content,
+        center);
+        flex-direction: column;
+        box-shadow: 0 0 5px 2px $secondary;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        padding: 0.8rem;
+    }
+    &__favoriteIcon {
+        position: absolute;
+        right: 0.7rem;
+        top: 0.7rem;
+        width: 1.5rem;
+    }
+    &__image {
+        width: 60%;
+        align-self: center;
+    }
+    &__itemTitle {
+        padding: 0.8rem 0;
+        font-family: 'BrandonGrotesqueBold';
+        font-size: 1.1rem;
+    }
+    &__description {
+        @include flex(justify-content,
+        space-between);
+    }
+    &__priceCointainer {
+        @include flex(align-items,
+        center);
+    }
+    &__value {
+        margin-left: 0.2rem;
+        color: $primary;
+        font-family: 'BrandonGrotesqueRegular';
+    }
+    &__addToCart {
+        border-radius: 100%;
+        color: $primary;
+        background-color: $primary-light;
+        font-size: 1.1rem;
+        border: none;
+    }
+}
+
+.trending {
+    margin-top: 2rem;
+    .nav {
+        &__list {
+            @include flex(justify-content,
+            space-around);
+            color: $font-color-light;
+            font-family: 'BrandonGrotesqueRegular';
+            align-items: end;
+            .active {
+                font-family: 'BrandonGrotesqueBold';
+                font-size: 1.5rem;
+                color: $font-color;
+            }
+            ///POG abaixo
+            .active::before {
+                margin-top: 1px;
+                content: "     ";
+                position: absolute;
+                border-bottom: solid 3px #FFA451;
+            }
+        }
+    }
+    &__combos {
+        margin-top: 2rem;
+        display: flex;
+        overflow: scroll;
+    }
+    &__item {
+        position: relative;
+        min-width: 160px;
+        @include flex(justify-content,
+        center);
+        flex-direction: column;
+        box-shadow: 0 0 5px 2px $secondary;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        padding: 0.8rem 1rem;
+        margin-right: 1rem;
+    }
+    ///Trending cards color
+    .red {
+        background-color: $light-red;
+    }
+    .purple {
+        background-color: $light-purple;
+    }
+    .yellow {
+        background-color: $light-yellow;
+    }
+    &__favoriteIcon {
+        position: absolute;
+        z-index: 1;
+        right: 0.7rem;
+        top: 0.7rem;
+        width: 1.5rem;
+    }
+    &__imgContainer {
+        margin-top: 1rem;
+        @include flex(justify-content,
+        center);
+    }
+    &__image {
+        width: 80%;
+    }
+    &__itemTitle {
+        padding: 0.8rem 0;
+        font-family: 'BrandonGrotesqueBold';
+        font-size: 1.1rem;
+    }
+    &__description {
+        @include flex(justify-content,
+        space-between);
+    }
+    &__priceCointainer {
+        @include flex(align-items,
+        center);
+    }
+    &__value {
+        margin-left: 0.2rem;
+        color: $primary;
+        font-family: 'BrandonGrotesqueRegular';
+    }
+    &__addToCart {
+        border-radius: 100%;
+        color: $primary;
+        background-color: $primary-light;
+        font-size: 1.1rem;
+        border: none;
     }
 }
