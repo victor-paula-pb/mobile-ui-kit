@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<script>
+    window.addEventListener(`load`, () => {
+        let elements = [...document.querySelectorAll("span")]
+        console.log(elements)
+        elements.map((e) => e.innerText = localStorage.getItem(`name`))
+    })
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile UI Kit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+
+    <script>
+        setTimeout(() => {
+            document.getElementById("logo").classList.remove("splash__hidden")
+            setTimeout(() => {
+                window.location.replace('/index.html')
+            }, 2000);
+        }, 500);
+    </script>
+</head>
+
+<body>
+    <div class="splash">
+        <img src="assets/img/logo.png" alt="" id='logo' class="logo splash__hidden">
+    </div>
+</body>
+
+</html>
