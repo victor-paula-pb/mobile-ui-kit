@@ -14,18 +14,25 @@ $font-color-light: #938DB5;
 }
 
 @font-face {
-    font-family: 'BrandonGrotesqueRegular';
-    src: url('../assets/fonts/BrandonGrotesque/Brandon_reg.otf');
+    font-family: 'Noto-sans';
+    src: url('../assets/fonts/Noto/NotoSansKR-Light.otf');
+    font-weight: lighter;
 }
 
 @font-face {
-    font-family: 'BrandonGrotesqueLight';
-    src: url('../assets/fonts/BrandonGrotesque/Brandon_light.otf');
+    font-family: 'Noto-sans';
+    src: url('../assets/fonts/Noto/NotoSansKR-Regular.otf');
+    font-weight: normal;
 }
 
 @font-face {
-    font-family: 'BrandonGrotesqueBold';
-    src: url('../assets/fonts/BrandonGrotesque/Brandon_bld.otf');
+    font-family: 'Noto-sans';
+    src: url('../assets/fonts/Noto/NotoSansKR-Bold.otf');
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -80,7 +87,7 @@ body {
         flex-direction: column;
         width: 80%;
         margin: 0 auto;
-        font-family: 'BrandonGrotesqueRegular';
+        font-family: 'Noto-sans';
     }
     &__title {
         font-weight: bold;
@@ -89,7 +96,8 @@ body {
         font-weight: 600;
     }
     &__description {
-        font-family: 'BrandonGrotesqueLight';
+        font-family: 'Noto-sans';
+        font-weight: lighter;
         width: 100%;
         @include flex(justify-content,
         center);
@@ -125,7 +133,7 @@ body {
 .header {
     @include flex(justify-content,
     space-between);
-    padding: 1.5rem 2rem 1rem;
+    padding: 1.5rem 1.5rem 0rem;
     &__burger {
         @include flex(align-items,
         center);
@@ -138,19 +146,20 @@ body {
     }
     &__basketText {
         margin-top: 3px;
-        font-family: 'BrandonGrotesqueRegular';
+        font-family: 'Noto-sans';
         font-size: 0.8rem;
     }
 }
 
 .main {
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     &__title {
-        font-family: 'BrandonGrotesqueLight';
-        font-size: 1.5rem;
+        font-family: 'Noto-sans';
+        font-weight: lighter;
+        font-size: 1.25rem;
         width: 80%;
         strong {
-            font-family: 'BrandonGrotesqueRegular';
+            font-family: 'Noto-sans';
         }
     }
     .search {
@@ -168,22 +177,23 @@ body {
         }
         &__input {
             padding: 1rem 2rem 1rem 3rem;
-            width: 75%;
+            width: 86%;
             border-radius: 0.5rem;
             background-color: $secondary;
             border: none;
         }
         &__filter {
             width: 1.75rem;
-            margin-left: 0.5rem;
+            margin-left: 1rem;
         }
     }
 }
 
 .recommended {
     &__title {
-        font-family: 'BrandonGrotesqueBold';
-        font-size: 1.6rem;
+        font-family: 'Noto-sans';
+        font-weight: bold;
+        font-size: 1.5rem;
     }
     &__combos {
         margin-top: 2rem;
@@ -213,8 +223,9 @@ body {
     }
     &__itemTitle {
         padding: 0.8rem 0;
-        font-family: 'BrandonGrotesqueBold';
-        font-size: 1.1rem;
+        font-family: 'Noto-sans';
+        font-weight: bold;
+        font-size: 1rem;
     }
     &__description {
         @include flex(justify-content,
@@ -227,7 +238,7 @@ body {
     &__value {
         margin-left: 0.2rem;
         color: $primary;
-        font-family: 'BrandonGrotesqueRegular';
+        font-family: 'Noto-sans';
     }
     &__addToCart {
         border-radius: 100%;
@@ -245,10 +256,11 @@ body {
             @include flex(justify-content,
             space-around);
             color: $font-color-light;
-            font-family: 'BrandonGrotesqueRegular';
+            font-family: 'Noto-sans';
             align-items: end;
             .active {
-                font-family: 'BrandonGrotesqueBold';
+                font-family: 'Noto-sans';
+                font-weight: bold;
                 font-size: 1.5rem;
                 color: $font-color;
             }
@@ -265,18 +277,19 @@ body {
         margin-top: 2rem;
         display: flex;
         overflow: scroll;
+        height: auto;
     }
     &__item {
         position: relative;
-        min-width: 160px;
         @include flex(justify-content,
         center);
         flex-direction: column;
         box-shadow: 0 0 5px 2px $secondary;
         border-radius: 0.5rem;
-        box-sizing: border-box;
         padding: 0.8rem 1rem;
         margin-right: 1rem;
+        min-width: 140px;
+        min-height: 150px;
     }
     ///Trending cards color
     .red {
@@ -296,17 +309,20 @@ body {
         width: 1.5rem;
     }
     &__imgContainer {
-        margin-top: 1rem;
+        padding-top: 0.5rem;
+        flex-grow: 1;
         @include flex(justify-content,
         center);
     }
     &__image {
-        width: 80%;
+        width: 60%;
+        align-self: center;
     }
     &__itemTitle {
         padding: 0.8rem 0;
-        font-family: 'BrandonGrotesqueBold';
-        font-size: 1.1rem;
+        font-family: 'Noto-sans';
+        font-weight: lighter;
+        font-size: 0.8rem;
     }
     &__description {
         @include flex(justify-content,
@@ -319,7 +335,7 @@ body {
     &__value {
         margin-left: 0.2rem;
         color: $primary;
-        font-family: 'BrandonGrotesqueRegular';
+        font-family: 'Noto-sans';
     }
     &__addToCart {
         border-radius: 100%;
@@ -329,3 +345,5 @@ body {
         border: none;
     }
 }
+
+.addToCart {}
