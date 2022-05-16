@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<script>
+    window.addEventListener(`load`, () => {
+        let elements = [...document.querySelectorAll("span")]
+        console.log(elements)
+        elements.map((e) => e.innerText = localStorage.getItem(`name`))
+    })
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile UI Kit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+
+    <script>
+    </script>
+</head>
+
+<body>
+    <div class="basket">
+        <div class="basket__header">
+            <a href='home.html' class="basket__back">
+                <img src="assets/img/arrowback.svg" alt="">
+                <div class="back__text">
+                    Go back
+                </div>
+            </a>
+            <h1 class="basket__title">My Basket</h1>
+        </div>
+        <div class="basket__body">
+            <div class="item">
+                <div class="item__imgContainer">
+                    <img src="assets/img/hot (2).png" alt="">
+                </div>
+                <div class="item__description">
+                    <h2 class="item__title">Quinoa fruit salad</h2>
+                    <p class="item__quantity">2 packs</p>
+                </div>
+                <div class="item__value">
+                    <div class="item__currency">
+                        <img src="assets/img/currency.png" alt="">
+                    </div>
+                    <div class="item__price">
+                        2.000
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
