@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<script>
+    window.addEventListener(`load`, () => {
+        let elements = [...document.querySelectorAll("span")]
+        console.log(elements)
+        elements.map((e) => e.innerText = localStorage.getItem(`name`))
+    })
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile UI Kit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+
+    <script>
+    </script>
+</head>
+
+<body>
+    <div class="addToCart__container addToCart">
+        <div class="addToCart__header">
+            <a href='home.html' class="addToCart__back">
+                <img src="assets/img/arrowback.svg" alt="">
+                <div class="back__text">
+                    Go back
+                </div>
+            </a>
+            <div class="addToCart__image">
+
+                <img src="assets/img/Honey-Lime-Peach-Fruit-Salad-3-725x725-1-removebg-preview 1.png" alt="">
+            </div>
+        </div>
+        <div class="addToCart__body">
+            <h1 class="addToCart__title">Quinoa Fruit Salad</h1>
+            <div class="addToCart__details">
+                <div class="addToCart__controls">
+                    <img src="assets/img/minus.svg" alt="" class="">
+                    <div class="addToCart__quantity">1</div>
+                    <img src="assets/img/plus.svg" alt="" class="">
+                </div>
+                <div class="addToCart__value">
+                    <div class="addToCart__currency">
+                        <img src="assets/img/currency.png" alt="">
+                    </div>
+                    <div class="addToCart__price">
+                        2.000
+                    </div>
+                </div>
+            </div>
+            <hr class="addToCart__hr">
+
+            <div class="addToCart__description description">
+                <h2 class="description__title">One Pack Contains:</h2>
+                <p class="description__details">
+                    Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.
+                </p>
+            </div>
+            <hr class="addToCart__hr">
+            <div class="addToCart__footer footer">
+                <p class="addToCart__hint">
+                    If you are looking for a new fruit salad to eat today, quinoa is the perfect brinch for you. make
+                </p>
+                <div class="addToCart__controlsFooter">
+                    <img src="assets/img/wishlist.svg" alt="">
+                    <a href="#" class="addToCart__addToBasket">Add to basket</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
