@@ -669,3 +669,46 @@ body {
         color: $primary-light;
     }
 }
+
+.congratulations {
+    font-family: 'Noto-sans';
+    font-weight: bold;
+    @include flex(justify-content,
+    center);
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    .img-confirm {
+        margin-bottom: 3.5rem;
+    }
+    &__title {
+        font-size: 2rem;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+    }
+    &__caption {
+        line-height: 1.875rem;
+        padding: 0 4rem;
+        font-weight: lighter;
+        margin-bottom: 3.5rem;
+    }
+    .button-orange {
+        background-color: $primary;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: lighter;
+        margin-bottom: 3rem;
+    }
+    .button-outline {
+        background-color: white;
+        color: $primary;
+        border: 1px solid $primary;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: lighter;
+        margin-bottom: 3rem;
+    }
+}
