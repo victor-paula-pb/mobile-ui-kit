@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<script>
-    window.addEventListener(`load`, () => {
-        let elements = [...document.querySelectorAll("span")]
-        console.log(elements)
-        elements.map((e) => e.innerText = localStorage.getItem(`name`))
-    })
-</script>
 
 <head>
     <meta charset="UTF-8">
@@ -17,10 +10,73 @@
     <link rel="stylesheet" href="css/reset.css">
 
     <script>
+        function showModal() {
+            document.querySelector('.overlay').classList.add('showing')
+            document.querySelector('.modal__delivery').classList.remove('slide-down')
+
+
+        }
+
+        function quitModal(query) {
+            document.querySelector('.overlay').classList.remove('showing')
+            document.querySelector(query).classList.add('slide-down')
+        }
+
+        function paymentModal() {
+
+            document.querySelector('.modal__delivery').classList.add('slide-down')
+            document.querySelector('.modal__payment').classList.remove('slide-down')
+        }
     </script>
 </head>
 
-<body>
+<body class="body-onepage">
+    <div class="overlay"></div>
+    <div class="modal modal__delivery slide-down">
+        <img src="assets/img/Cancel.svg" alt="" onclick="quitModal('.modal__delivery')" class="cancel-button">
+        <div class="input-group">
+            <label for="address">Delivery Address</label>
+            <input type="text" name="address" id="address" placeholder="10th avenue, Lekki, Lagos State">
+        </div>
+
+        <div class="input-group">
+            <label for="tel">Number we call</label>
+            <input type="tel" name="tel" id="tel" placeholder="09090605708">
+        </div>
+
+        <div class="button-group">
+            <a href="congratulations.html">Pay on delivery</a>
+            <a href="#" onclick='paymentModal()'>Pay with card</a>
+        </div>
+    </div>
+
+    <div class="modal modal__payment slide-down">
+        <img src="assets/img/Cancel.svg" alt="" onclick="quitModal('.modal__payment')" class="cancel-button">
+        <div class="input-group">
+            <label for="cardHolder">Card holders name</label>
+            <input type="text" name="cardHolder" id="cardHolder" placeholder="Adolphus Chris">
+        </div>
+
+        <div class="input-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="cardNumber" name="cardNumber" id="cardNumber" placeholder="1234 5678 9012 1314">
+        </div>
+
+        <div class="two-column">
+            <div class="input-group">
+                <label for="cardDate">Date</label>
+                <input type="cardDate" name="cardDate" id="cardDate" placeholder="10/30">
+            </div>
+            <div class="input-group">
+                <label for="ccv">CCV</label>
+                <input type="ccv" name="ccv" id="ccv" placeholder="123">
+            </div>
+        </div>
+
+        <div class="complete__order orange">
+            <a href="congratulations.html" class="btn-white">Complete Order</a>
+        </div>
+    </div>
     <div class="basket">
         <div class="basket__header">
             <a href='home.html' class="basket__back">
@@ -33,7 +89,7 @@
         </div>
         <div class="basket__body">
             <div class="item">
-                <div class="item__imgContainer">
+                <div class="item__imgContainer red">
                     <img src="assets/img/hot (2).png" alt="">
                 </div>
                 <div class="item__description">
@@ -49,6 +105,142 @@
                     </div>
                 </div>
             </div>
+            <div class="item">
+                <div class="item__imgContainer yellow">
+                    <img src="assets/img/hot (2).png" alt="">
+                </div>
+                <div class="item__description">
+                    <h2 class="item__title">Quinoa fruit salad</h2>
+                    <p class="item__quantity">2 packs</p>
+                </div>
+                <div class="item__value">
+                    <div class="item__currency">
+                        <img src="assets/img/currency.png" alt="">
+                    </div>
+                    <div class="item__price">
+                        2.000
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__imgContainer purple">
+                    <img src="assets/img/hot (2).png" alt="">
+                </div>
+                <div class="item__description">
+                    <h2 class="item__title">Quinoa fruit salad</h2>
+                    <p class="item__quantity">2 packs</p>
+                </div>
+                <div class="item__value">
+                    <div class="item__currency">
+                        <img src="assets/img/currency.png" alt="">
+                    </div>
+                    <div class="item__price">
+                        2.000
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__imgContainer purple">
+                    <img src="assets/img/hot (2).png" alt="">
+                </div>
+                <div class="item__description">
+                    <h2 class="item__title">Quinoa fruit salad</h2>
+                    <p class="item__quantity">2 packs</p>
+                </div>
+                <div class="item__value">
+                    <div class="item__currency">
+                        <img src="assets/img/currency.png" alt="">
+                    </div>
+                    <div class="item__price">
+                        2.000
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__imgContainer purple">
+                    <img src="assets/img/hot (2).png" alt="">
+                </div>
+                <div class="item__description">
+                    <h2 class="item__title">Quinoa fruit salad</h2>
+                    <p class="item__quantity">2 packs</p>
+                </div>
+                <div class="item__value">
+                    <div class="item__currency">
+                        <img src="assets/img/currency.png" alt="">
+                    </div>
+                    <div class="item__price">
+                        2.000
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__imgContainer purple">
+                    <img src="assets/img/hot (2).png" alt="">
+                </div>
+                <div class="item__description">
+                    <h2 class="item__title">Quinoa fruit salad</h2>
+                    <p class="item__quantity">2 packs</p>
+                </div>
+                <div class="item__value">
+                    <div class="item__currency">
+                        <img src="assets/img/currency.png" alt="">
+                    </div>
+                    <div class="item__price">
+                        2.000
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__imgContainer purple">
+                    <img src="assets/img/hot (2).png" alt="">
+                </div>
+                <div class="item__description">
+                    <h2 class="item__title">Quinoa fruit salad</h2>
+                    <p class="item__quantity">2 packs</p>
+                </div>
+                <div class="item__value">
+                    <div class="item__currency">
+                        <img src="assets/img/currency.png" alt="">
+                    </div>
+                    <div class="item__price">
+                        2.000
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__imgContainer purple">
+                    <img src="assets/img/hot (2).png" alt="">
+                </div>
+                <div class="item__description">
+                    <h2 class="item__title">Quinoa fruit salad</h2>
+                    <p class="item__quantity">2 packs</p>
+                </div>
+                <div class="item__value">
+                    <div class="item__currency">
+                        <img src="assets/img/currency.png" alt="">
+                    </div>
+                    <div class="item__price">
+                        2.000
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="basket__footer">
+            <div class="basket__total">
+                <p class="total__label">
+                    Total
+                </p>
+                <div class="total__value">
+                    <img src="assets/img/currency.svg" alt="" srcset="" class="currency">
+                    <div class="value">
+                        2.000
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="basket__checkout" onclick="showModal()">
+                Checkout
+            </a>
+
         </div>
     </div>
 </body>

@@ -37,8 +37,11 @@ $font-color-light: #938DB5;
 
 body {
     color: $font-color;
-    // width: 100vw;
-    // height: 100vh;
+}
+
+.body-onepage {
+    width: 100vw;
+    height: 100vh;
 }
 
 .splash {
@@ -459,13 +462,105 @@ body {
     }
 }
 
+.overlay {
+    position: absolute;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    display: none;
+    background-color: #27214D;
+}
+
+.showing {
+    opacity: 0.5;
+    display: block;
+}
+
+.modal {
+    z-index: 10;
+    display: block;
+    font-family: 'Noto-sans';
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    width: 100vw;
+    background: white;
+    border-radius: 1.25rem 1.25rem 0 0;
+    &__delivery {}
+    .cancel-button {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-150%);
+        cursor: pointer;
+    }
+    .input-group {
+        margin: 2.5rem 1.5rem 0;
+        label {
+            font-weight: bold;
+            font-size: 1.25;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        input {
+            width: 100%;
+            border: none;
+            padding: 0.875rem 1.5rem;
+            background-color: $secondary;
+            border-radius: 0.5rem;
+        }
+    }
+    .two-column {
+        @include flex(justify-content,
+        space-between);
+        margin-bottom: 1.5rem;
+    }
+    .button-group {
+        margin: 2.5rem 1.5rem;
+        @include flex(justify-content,
+        space-between);
+        a {
+            padding: 1rem;
+            border: $primary 2px solid;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: $primary;
+        }
+    }
+    .complete__order {
+        @include flex(justify-content,
+        center);
+        padding: 1.5rem 0 1rem 0;
+        border-radius: 1rem 1rem 0 0;
+        .btn-white {
+            padding: 1rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            line-height: 1.5rem;
+            font-weight: bold;
+            color: $primary;
+        }
+    }
+    .orange {
+        background-color: $primary;
+    }
+}
+
+.slide-down {
+    display: none;
+}
+
 .basket {
     font-family: 'Noto-sans';
     width: 100vw;
-    height: 100vh;
-    background-color: $primary;
+    height: 99vh;
+    @include flex(flex-direction,
+    column);
     &__header {
-        padding: 1.25rem 1.5rem 2.5rem;
+        background-color: $primary;
+        padding: 3rem 1.5rem 1.5rem;
     }
     &__back {
         position: absolute;
@@ -473,7 +568,7 @@ body {
         @include flex(align-items,
         center);
         text-decoration: none;
-        width: 25%;
+        // width: 25%;
         background-color: $primary-light;
         padding: 0.5rem;
         border-radius: 2rem;
@@ -483,23 +578,41 @@ body {
     }
     &__title {
         text-align: center;
+        color: white;
         font-size: 1.5rem;
         line-height: 32px;
-        color: $primary-light;
     }
     &__body {
+        overflow: scroll;
         background-color: white;
+        flex-grow: 1;
         .item {
             @include flex(flex-direction,
             row);
+            padding: .75rem;
+            border-bottom: 1px solid grey;
         }
         .item__imgContainer {
-            padding: 1rem 1rem 1rem 1.5rem;
+            padding: 1.18rem 0.56rem;
+            border-radius: 5px;
+            background-color: $light-red;
             img {
-                max-width: 60px
+                width: 4rem;
+                height: 2rem;
             }
         }
+        ///Trending cards color
+        .red {
+            background-color: $light-red;
+        }
+        .purple {
+            background-color: $light-purple;
+        }
+        .yellow {
+            background-color: $light-yellow;
+        }
         .item__description {
+            margin-left: 1rem;
             @include flex(justify-content,
             center);
             flex-direction: column;
@@ -515,7 +628,44 @@ body {
         .item__value {
             @include flex(align-items,
             center);
+            color: $font-color;
             padding-right: 1.5rem;
         }
+    }
+    &__footer {
+        @include flex(align-items,
+        center);
+        padding: 1.5rem 1.56rem;
+    }
+    &__total {
+        flex-basis: 30%;
+        flex-grow: 1;
+        @include flex(flex-direction,
+        column);
+        .total__label {
+            line-height: 1.5rem;
+            font-weight: bold;
+        }
+        .total__value {
+            @include flex(flex-direction,
+            row);
+            align-items: center;
+            .currency {
+                width: 1.35rem;
+                margin-top: 5px;
+                margin-right: 5px;
+            }
+            .value {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+        }
+    }
+    &__checkout {
+        padding: 0.875rem 3.625rem;
+        background-color: $primary;
+        border-radius: 0.625rem;
+        text-decoration: none;
+        color: $primary-light;
     }
 }
